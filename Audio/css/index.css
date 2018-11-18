@@ -1,0 +1,261 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.cont {
+	width: 1022px;
+	height: 670px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -335px 0 0 -511px;
+	box-shadow: 0 0 30px 4px rgba(0, 0, 0, 0.2);
+	color: #242423;
+}
+
+.header {
+	height: 50px;
+	background: #c62f2f;
+	padding: 0 15px;
+	position: relative;
+	z-index: 20;
+}
+
+.header img {
+	height: 20px;
+	margin-top: 15px;
+}
+
+.main {
+	height: 570px;
+	/*background: #D8D8D8;*/
+	background-image: radial-gradient(grey,white);
+}
+
+.main>div {
+	width: 50%;
+	height: 100%;
+	float: left;
+	box-sizing: border-box;
+}
+
+.l-box {
+	position: relative;
+}
+
+.needle {
+	position: absolute;
+	top: -5px;
+	left: 50%;
+	width: 100px;
+	margin-left: -15px;
+	-webkit-transform-origin: 15px top;
+	-webkit-transform: rotate(-30deg);
+	z-index: 10;
+}
+
+.needle.active {
+	-webkit-animation: move 0.5s forwards;
+}
+
+@-webkit-keyframes move {
+	from {
+		-webkit-transform: rotate(-30deg);
+	}
+	to {
+		-webkit-transform: rotate(0deg);
+	}
+}
+
+.disc {
+	width: 300px;
+	height: 300px;
+	/*border: 1px solid red;*/
+	margin: 60px auto;
+	background: url(../img/disc.png);
+	background-size: 100% 100%;
+	position: relative;
+	z-index: 1;
+	-webkit-animation: rot 4s infinite linear paused;
+}
+
+@-webkit-keyframes rot {
+	from {
+		-webkit-transform: rotate(0);
+	}
+	to {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+.disc img {
+	width: 180px;
+	height: 180px;
+	border-radius: 50%;
+	margin: 60px;
+}
+
+.r-box {
+	padding-left: 50px;
+}
+
+.r-box h3 {
+	font-size: 20px;
+	margin: 30px 0;
+}
+
+.r-box .lrc {
+	width: 390px;
+	height: 330px;
+	border-right: 1px solid #9b9b9b;
+	overflow: hidden;
+}
+
+.r-box .lrc ul {
+	transition: all 0.5s;
+}
+
+.r-box .lrc li {
+	height: 30px;
+	line-height: 30px;
+	font-size: 12px;
+}
+
+.footer {
+	height: 50px;
+	border-top: 1px solid #D8D8D8;
+}
+
+.control {
+	width: 200px;
+}
+
+.control li {
+	width: 30px;
+	height: 30px;
+	background: #e83c3c;
+	border-radius: 50%;
+	float: left;
+	margin: 10px;
+	text-align: center;
+	color: #FFF;
+	line-height: 30px;
+}
+
+.control li i {
+	font-size: 18px;
+}
+
+.iconfont.icon-bofangqi-bofang {
+	font-size: 24px;
+	margin-left: 3px;
+}
+
+.control li:nth-child(1) {
+	-webkit-transform: rotate(180deg);
+}
+
+.control li:nth-child(2) {
+	width: 34px;
+	height: 34px;
+	margin-top: 8px;
+	line-height: 34px;
+}
+
+.time-cont {
+	width: 530px;
+	margin: 13px 50px;
+	float: left;
+}
+
+.time-cont span {
+	vertical-align: middle;
+}
+
+
+
+.progress {
+	width: 400px;
+	height: 4px;
+	background: #D8D8D8;
+	border-radius: 2px;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 10px;
+	position: relative;
+}
+.progress .bar {
+	width: 0;
+	height: 4px;
+	background: red;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.time-cont .pic {
+	width: 16px;
+	height: 16px;
+	background: url(../img/iconall.png) no-repeat -3px -253px;
+	position: absolute;
+	top: -6px;
+	right: -8px;
+	border-radius: 50%;
+}
+
+.voc {
+	line-height: 50px;
+}
+
+.voc span {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	font-size: 10px;
+	line-height: 16px;
+	border: 1px solid #444;
+	color: #444;
+	text-align: center;
+	margin-left: 50px;
+	cursor: pointer;
+}
+.voc span.active{
+	background: grey;
+	color: white;
+}
+.voc #vol {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	background: url('../img/音量.png') no-repeat center center;
+	background-size: 100% 100%;
+	position: relative;
+	top: 4px;
+	cursor: pointer;
+}
+
+/*桌面歌词*/
+.desk{
+	width: 600px;
+	height: 80px;
+	background: rgba(0,0,0,0.4);
+	position: absolute;
+	bottom: 50px;
+	left: 50%;
+	margin-left: -300px;
+	text-align: center;
+	white-space: nowrap;
+	display: none;
+	z-index: 99;
+}
+.desk .inner,
+.desk .innerTop{
+	font-size: 30px;
+	color: white;
+	position: absolute;
+	top: 20px;	
+	left: 0;
+}
+
+
