@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/lessRem.css"/>
+	</head>
+	<body>
+		<div class="header"></div>
+		<img src="img/girl.png"/>
+		<ul class="main">
+			<li class="cont">
+				<h3>最新华丽美版Ulthera 还你紧致童颜</h3>
+				<p>上海春夏秋冬外科整形医院<br />
+					售价：<span class="price">￥600 </span>&nbsp;&nbsp;医院价：<s>￥1000</s>
+				</p>
+				<div class="select">
+					<p>请选择分期日期：</p>
+					<span class="active">￥680直购<br />（无服务费）</span>
+					<span>￥226.67 × 3期<br />（无服务费）</span>
+					<span>￥226.67 × 6期<br />（含每期服务费￥22）</span>
+					<span>￥226.67 × 12期<br />（含每期服务费￥22）</span>
+				</div>
+				
+				<p>需首付:0元&nbsp;&nbsp;<span>（首付金额＝总价－你的可用额度234元）</span></p>
+			</li>
+		</ul>
+		<ul class="main">
+			<li>
+				<a href="#">
+					项目、医师图文详情
+				</a>
+			</li>
+		</ul>
+		<ul class="main">
+			<li class="addr">
+				<div class="pic"></div>
+				<a href="#">
+					上海春夏秋冬外科整形医院<br />
+					<span>二级美容诊所</span>
+					<span>16年资质</span>
+					<span>韩国引进技术</span>
+				</a>
+			</li>
+			<li class="addr">
+				<div class="pic"></div>
+				咨询电话：021-2865379				
+			</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		window.onresize=function(){
+			fn();
+		}
+		fn();
+		function fn(){
+				//获取窗口尺寸
+			var html=document.getElementsByTagName("html")[0];
+			var screenW=html.offsetWidth;
+			console.log(screenW);
+			//设置根节点字体尺寸
+			var r=screenW/15;
+			html.style.fontSize=r+'px';
+			}
+	</script>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;	
+				list-style: none;
+			}
+			ul{
+				height:1.8rem ;
+				border-bottom: 1px solid #D8D8D8;
+			}
+			ul li{
+				font-size: 0.42rem;
+				float: left;
+				width: 20%;
+				text-align: center;
+				line-height: 1.8rem;
+			}
+			.list{
+				padding: 0.42rem 0.42rem 0;
+				float: left;
+			}
+			.list img{
+				height: 4.2rem;
+				float: left;
+				margin-right: 0.42rem;
+			}
+			.list h3{
+				font-size: 0.56rem;
+				line-height: 0.83rem;
+				margin-bottom: 0.8rem;
+				
+			}
+			.list strong{
+				font-size: 0.56rem;
+				
+				color: red;
+			}
+			.list span{
+				font-size: 0.42rem;
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>店铺首页</li>
+			<li>全部商品</li>
+			<li>热搜</li>
+			<li>上新</li>
+			<li>店铺动态</li>
+		</ul>
+		<div class="cont">
+			<div class="list">
+				<img src="img/pro.png"/>
+				<h3>锤子 坚果pro 64GB 酒红色 全网通 移动联通电信 手机 双卡双待</h3>
+				<strong>¥1999.00</strong>
+				
+				<span>1234345条评论 好评98%</span>
+			</div>
+			<div class="list">
+				<img src="img/pro.png"/>
+				<h3>锤子 坚果pro 64GB 酒红色 全网通 移动联通电信 手机 双卡双待</h3>
+				<strong>¥1999.00</strong>
+				
+				<span>1234345条评论 好评98%</span>
+			</div>
+			<div class="list">
+				<img src="img/pro.png"/>
+				<h3>锤子 坚果pro 64GB 酒红色 全网通 移动联通电信 手机 双卡双待</h3>
+				<strong>¥1999.00</strong>
+				
+				<span>1234345条评论 好评98%</span>
+			</div>
+			<div class="list">
+				<img src="img/pro.png"/>
+				<h3>锤子 坚果pro 64GB 酒红色 全网通 移动联通电信 手机 双卡双待</h3>
+				<strong>¥1999.00</strong>
+				
+				<span>1234345条评论 好评98%</span>
+			</div>
+		</div>
+	</body>
+	<script>
+//		随着窗口的变化，调节页面字体的尺寸
+		window.onresize=function(){
+			fn();
+		}
+		fn();
+		function fn(){
+				//获取窗口尺寸
+			var html=document.getElementsByTagName("html")[0];
+			var screenW=html.offsetWidth;
+			console.log(screenW);
+			//设置根节点字体尺寸
+			var r=screenW/15;
+			html.style.fontSize=r+'px';
+			}
+	</script>
+</html>

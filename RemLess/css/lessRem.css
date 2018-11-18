@@ -1,0 +1,107 @@
+@import 'reset.css';
+body {
+  color: #333;
+  background: #F4F4F4;
+}
+.header {
+  width: 100%;
+  height: 2.46rem;
+  background: url(../img/header.png) no-repeat;
+  background-size: 100% 2.46rem;
+}
+img {
+  width: 100%;
+  height: 11.6rem;
+}
+ul {
+  margin-bottom: 0.7rem;
+  background: #FFFFFF;
+}
+.cont h3 {
+  font-size: 0.68rem;
+  line-height: 1rem;
+}
+.cont p {
+  line-height: 1rem;
+  color: #ababab;
+  font-size: 0.56rem;
+}
+.cont p:last-child {
+  color: #333;
+}
+.cont p span {
+  font-size: 0.48rem;
+  color: #ababab;
+}
+.cont .select {
+  margin: 0.24rem 0;
+}
+.cont .select span {
+  display: inline-block;
+  width: 6.14rem;
+  height: 1.94rem;
+  border: 1px solid #ababab;
+  margin: 0.2rem 0.4rem 0.4rem 0;
+  text-align: center;
+  padding-top: 0.3rem;
+}
+.cont .select span.active {
+  border: 1px solid red;
+}
+.cont .price {
+  color: red;
+}
+.main {
+  border-top: 1px solid #E5E5E5;
+}
+.main li {
+  font-size: 0.56rem;
+  padding: 0.6rem;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+}
+.main li:after {
+  content: '';
+  height: 1px;
+  width: 100%;
+  background: #E5E5E5 ;
+  position: absolute;
+  bottom: 0;
+  left: 0.6rem;
+}
+.main li:last-child:after {
+  left: 0;
+}
+.main li a {
+  display: block;
+  background: url(../img/right.png) no-repeat;
+  background-position: right center;
+}
+.addr {
+  font-size: 0.56rem;
+  box-sizing: border-box;
+}
+.addr .pic {
+  width: 0.64rem;
+  height: 0.64rem;
+  background: url(../img/yy.png) no-repeat center;
+  background-size: 0.62rem;
+  float: left;
+  margin-right: 0.1rem;
+}
+.addr .pic:last-child {
+  background: url(../img/End-call.png) no-repeat center;
+  background-size: 0.62rem;
+}
+.addr span {
+  margin-left: 0.74rem;
+  color: #3ecabc;
+  height: 0.8rem;
+  padding: 0 0.4rem;
+  border: 1px solid #3ecabc;
+  line-height: 1.4rem;
+  margin-right: -0.3rem;
+  font-size: 0.48rem;
+  border-radius: 12px;
+}

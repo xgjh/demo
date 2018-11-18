@@ -1,0 +1,115 @@
+@import 'reset.css';
+body{
+    color: #333;
+    background: #F4F4F4;
+}
+@r:50rem;
+.header{
+    width: 100%;
+    height: 123/@r;
+    background: url(../img/header.png) no-repeat;
+    background-size: 100% 123/@r;
+}
+img{
+    width: 100%;
+    height: 580/@r;
+}
+ul{
+    margin-bottom: 35/@r;
+    background: #FFFFFF;
+}
+.cont{
+    h3{
+        font-size: 34/@r;
+        line-height: 50/@r;
+    }
+    p{
+        line-height: 50/@r;
+        color: #ababab;
+         font-size: 28/@r;
+         &:last-child{
+             color: #333;
+         }
+         span{
+             font-size: 24/@r;
+             color: #ababab;
+         }
+    }
+   .select{
+       margin: 12/@r 0;
+       span{
+        display: inline-block;
+        width: 307/@r;
+        height: 97/@r;
+        border: 1px solid #ababab;
+        margin: 10/@r 20/@r 20/@r 0;
+        text-align: center;
+        padding-top: 15/@r;
+        &.active{
+            border: 1px solid red;
+            
+        }
+      }
+   }
+   .price{
+       color: red;
+   }
+    
+}
+
+.main{
+    border-top: 1px solid #E5E5E5;
+    li{
+        font-size:28/@r ;
+        padding: 30/@r;
+        font-weight: 700;
+        position: relative;
+        overflow: hidden;
+        &:after{
+           content: '';
+           height: 1px;
+           width: 100%;
+           background:#E5E5E5 ;
+           position: absolute;
+           bottom: 0;
+           left:30/@r ;
+        }
+        &:last-child:after{
+            left: 0;
+        }
+        a{
+            display: block;
+            background: url(../img/right.png) no-repeat;
+            background-position: right center; 
+           
+        }
+    }
+}
+.addr{
+    font-size: 28/@r;
+    box-sizing: border-box;
+    .pic{
+        width: 32/@r;
+        height: 32/@r;
+        background: url(../img/yy.png) no-repeat center;
+        background-size:31/@r ;
+        float: left;
+        margin-right: 5/@r;
+        &:last-child{
+             background: url(../img/End-call.png) no-repeat center;
+              background-size:31/@r ;
+        }
+    }
+    span{
+        margin-left: 37/@r;
+        color: #3ecabc;
+        height: 40/@r;
+        padding: 0 20/@r;
+        border: 1px solid #3ecabc;
+        line-height: 70/@r;
+        margin-right: -15/@r;
+        font-size: 24/@r;
+        border-radius: 12px;
+       
+    }
+}
