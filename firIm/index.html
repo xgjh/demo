@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/fir.css" />
+	</head>
+
+	<body>
+		<div class="loading"></div>
+		<div class="plane-cont">
+			<div class="cont">
+				<img src="img/plane.svg" />
+				<img src="img/propeller.svg" />
+			</div>
+		</div>
+		<span style="display: none;">GodBye~~~</span>
+		<script type="text/javascript">
+			var cont = document.getElementsByClassName("cont")[0];
+
+			function scrollFn(ev) {
+				//			console.log(ev.wheelDelta) //chrome
+				//			console.log(ev.detail)
+				var direct = true; //统一滚轮参数，向手心滚动true，向外滚动false
+				if(ev.wheelDelta) {
+					//				向手心 -120  向外 120
+					direct = ev.wheelDelta < 0 ? true : false;
+					//				console.log(ev.wheelDelta)
+				} else {
+					//				向手心  3  向外 -3
+					direct = ev.detail < 0 ? false : true;
+					//				console.log(ev.detail)
+				}
+				if(direct) {
+					cont.className = 'cont leave';
+					var span=document.getElementsByTagName('span')[0];
+					span.className='txt';
+					span.style.display='block';
+				}
+
+			}
+			document.onmousewheel = scrollFn; //chrome,IE
+			document.addEventListener('DOMMouseScroll', scrollFn, true); //firfox
+		</script>
+	</body>
+
+</html>
