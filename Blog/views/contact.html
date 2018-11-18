@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>ChinaZ</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/pub/fronts/css/bootstrap.min.css">
+
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="/pub/fronts/css/fontawesome-all.min.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="/pub/fronts/css/swiper.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/pub/fronts/css/style.css">
+    <style>
+
+    </style>
+    <style>
+        .contact-page {
+            background: url("pub/fronts/images/contact-background-image.jpg") no-repeat;
+        }
+        .c-blue{
+            color: #007bff !important;
+        }
+
+        .contact-page-map{
+            padding: 40px;
+            line-height: 40px;
+            font-size: 22px;
+            color: #333;
+            text-align: justify;
+        }
+        .contact-page-map h3{
+            font-weight: bold;
+        }
+        .contact-page-map p:nth-of-type(1){
+            color: #9b9b9b;
+        }
+        .media{
+            padding: 40px 0;
+            border-bottom: 1px solid #d8d8d8;
+            /*margin:0 100px;*/
+        }
+        .media-object{
+            width: 50px;
+            height: 50px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .media-body{
+            color: #32383e ;
+        }
+        .hamburger-menu span{
+            background: #007bff;
+        }
+        .page-header .entry-title{
+            color: #989898;
+        }
+    </style>
+</head>
+
+<body class="contact-page">
+
+    <header class="site-header">
+        <div class="header-bar">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-10 col-lg-4">
+                        <h1 class="site-branding flex">
+                            <a href="#" class="c-blue">SUNFEST</a>
+                        </h1>
+                    </div>
+
+                    <div class="col-2 col-lg-8">
+                        <nav class="site-navigation">
+                            <div class="hamburger-menu d-lg-none" >
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div><!-- .hamburger-menu -->
+
+                            <ul>
+                                <li><a href="index.html">HOME</a></li>
+                                <li><a href="elements.html">SUNFEST 2018</a></li>
+                                <li><a href="ticket.html">ARTISTS</a></li>
+                                <li><a href="blog.html">BLOG</a></li>
+                                <li><a href="contact.html">CONTACT</a></li>
+                                <li><a href="#"><i class="fas fa-search"></i></a></li>
+                            </ul><!-- flex -->
+                        </nav><!-- .site-navigation -->
+                    </div><!-- .col-12 -->
+                </div><!-- .row -->
+            </div><!-- container-fluid -->
+        </div><!-- header-bar -->
+    </header><!-- .site-header -->
+
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="entry-header">
+                        <h2 class="entry-title">Elements</h2>
+
+                        <ul class="breadcrumbs flex align-items-center">
+                            <li><a href="index.html">HOME</a></li>
+                            <li>Contact</li>
+                        </ul><!-- .breadcrumbs -->
+                    </div><!-- entry-header -->
+                </div><!-- col-12 -->
+            </div><!-- row -->
+        </div><!-- container -->
+    </div><!-- page-header -->
+
+    <div class="container">
+        <div class="main-content">
+            <div class="contact-page-map">
+                <h3>{{detailD.title}}</h3>
+                <p>{{detailD.author}} | {{detailD.time}}</p>
+                <p>{{detailD.words}}</p>
+            </div><!-- map -->
+
+
+
+            <div class="get-in-touch">
+                <div class="entry-header">
+                    <div class="entry-title">
+                        <p>JUST THE BEST</p>
+                        <h2>来一句评论呗~</h2>
+                    </div><!-- entry-title -->
+                </div><!-- entry-header -->
+
+                <div class="entry-content">
+                    <p>Quisque at erat eu libero consequat tempus. Quisque mole stie convallis tempus.
+                        Ut semper purus metus, a euismod sapien sodales ac. Duis viverra eleifend fermentum.
+                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestibulum mauris quis aliquam.
+                        Integer accumsan sodales odio, id tempus velit ullamcorper id.</p>
+                </div><!-- entry-content -->
+
+                <div class="msg-cont">
+                    {% for item in msgD %}
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="media-object" src="/pub/front/images/image-3.jpg" alt="...">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">{{item.nickname}}</h4>
+                            {{item.msg}}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="contact-form">
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <input type="text" placeholder="昵称（选填）">
+                        </div><!-- col-4 -->
+
+                        <div class="col-12 col-md-6">
+                            <input type="email" placeholder="邮箱（选填）">
+                        </div><!-- col-6 -->
+
+                        <div class="col-12">
+                            <input type="text" placeholder="电话（选填）">
+                        </div>
+
+                        <div class="col-12">
+                            <textarea name="name" rows="8" cols="80" placeholder="留言内容（必填）"></textarea>
+                        </div>
+
+                        <div class="col-12 submit flex justify-content-center">
+                            <button class="btn" data-id="{{detailD._id.toString()}}">send message</button>
+                        </div>
+
+                    </div><!-- row -->
+                </div><!-- contact-form -->
+            </div><!-- newsletter-subscribe -->
+        </div><!-- main-content -->
+    </div><!-- container -->
+
+    <footer class="site-footer">
+        <div class="footer-cover-title flex justify-content-center align-items-center">
+            <h2>SUNFEST</h2>
+        </div><!-- .site-footer -->
+
+        <div class="footer-content-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="entry-title">
+                            <a href="#">SUNFEST</a>
+                        </div><!-- entry-title -->
+
+                        <div class="entry-mail">
+                            <a href="#">SAYHELLO@SUNFEST.COM</a>
+                        </div><!-- .entry-mail -->
+
+                        <div class="copyright-info">Copyright &copy; 2018.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></div><!-- copyright-info -->
+
+                        <div class="footer-social">
+                            <ul class="flex justify-content-center align-items-center">
+                                <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div><!-- footer-social -->
+                    </div><!-- col -->
+                </div><!-- row -->
+            </div><!-- container -->
+        </div><!-- footer-content-wrapper -->
+    </footer><!-- site-footer -->
+
+    <script type='text/javascript' src='/pub/fronts/js/jquery-3.1.1.min.js'></script>
+    <script>
+        $('.btn').click(function () {
+            var nickname = $('input').eq(0).val();
+            var email = $('input').eq(1).val();
+            var tel = $('input').eq(2).val();
+            var msg = $('textarea').eq(0).val();
+            var aId = $(this).attr('data-id');
+            if(msg==''){
+                alert('留言内容不能为空');
+                return false;
+            }
+            $.ajax({
+                url:'/front/leavemsg',
+                type:'post',
+                data:{
+                    articleId:aId,
+                    nickname:nickname,
+                    email:email,
+                    tel:tel,
+                    msg:msg
+                },
+                success:function (result) {
+
+                    if(result=='留言成功'){
+                        var str = `<div class="media">
+                                    <div class="media-left">
+                                        <a href="#">
+                                            <img class="media-object" src="/pub/front/images/image-3.jpg" alt="...">
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">${nickname}</h4>
+                                        ${msg}
+                                    </div>
+                                </div>`
+                        $('.msg-cont').append(str);
+                        alert('留言成功')
+                    }
+                }
+            })
+        })
+    </script>
+
+</body>
+</html>
