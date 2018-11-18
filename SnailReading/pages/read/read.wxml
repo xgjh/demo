@@ -1,0 +1,46 @@
+<!--pages/read/read.wxml-->
+<view class='container'>
+   <view class='info' wx:for="{{listData}}" wx:key="{{index}}" data-num="{{index}}" bindtap='jumpDetails'>
+      <view class='people'>
+        <image src="{{item.aPhoto}}"></image>
+        <text>{{item.author}}</text>
+      </view>
+      <image class='bigPic' src="{{item.bigImg}}"  mode='aspectFill'></image>
+      <view class='desc'>
+        <view class='tit'>
+          <text class="fire">热点</text>
+          <text>{{item.tit}}</text>
+        </view>
+        <view class='center'>{{item.intro}}
+        </view>
+    </view>
+    <view class='footer'>
+      <text>{{item.clickNum}}点击 · 4本书</text>
+      <view>{{item.great}}
+        <image src='/image/zan.jpg'></image>
+      </view>
+    </view>
+    
+   </view>
+   <!-- <view class='info'>
+      <view class='people'>
+        <image src='/image/img/photo2.jpg'></image>
+        <text>罗罔极</text>
+      </view>
+      <image class='bigPic' src='/image/bigPic.png' mode='aspectFill'></image>
+      <view class='desc'>
+        <view class='tit'>
+          <text>热点</text>
+          第一综艺归来， 我希望它再播100年。
+        </view>
+        <view class='center'>还记得两个月前吗？轰动娱乐圈的一件事---综艺《见字如面》第二季，仅仅播出一期，           第二季，仅仅播出一期就如清...
+        </view>
+    </view>
+    <view class='footer'>
+      <text>5326点击 · 4本书</text>
+      <view>335
+        <image src='/image/zan.jpg'></image>
+      </view>
+    </view>
+   </view> -->
+</view>

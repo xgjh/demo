@@ -1,0 +1,83 @@
+/* pages/details/details.wxss */
+.container{
+  padding: 50rpx 0;
+  background: #fff;
+  text-align: center;
+   padding-bottom: 100rpx;
+}
+.cont image{
+  width: 174rpx;
+  height: 250rpx;
+  box-shadow: 0 0 20rpx 2rpx rgba(0, 0, 0, 0.2);
+}
+.cont view{
+  margin: 40rpx 0;
+  font-size: 38rpx;
+}
+.cont text{
+  margin-bottom: 30rpx;
+  color: #09885A;
+  font-size: 30rpx;
+}
+.nav{
+  width: 750rpx;
+  height: 90rpx;
+ 
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #ececec;
+}
+.nav text{
+  font-size: 28rpx;
+  color: #a1a1a1;
+  height: 90rpx;
+  line-height: 90rpx;
+
+}
+.grey{
+  color: grey;
+}
+.d-cont{
+  width: 675rpx;
+  padding: 35rpx 45rpx 0 30rpx;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  letter-spacing: 2rpx;
+  text-align: justify;
+}
+.d-cont text{
+  display: block;
+  width: 750rpx;
+  height: 100rpx;
+  border-bottom: 1px solid #ececec;
+  line-height: 100rpx;
+  float: left;
+  margin-left: 50rpx;
+}
+.d-cont text:last-child{
+  margin-left: 0;
+  padding-left: 50rpx;
+}
+.details.active,
+.direc.active{
+  color: #000;
+  border-bottom: 1px solid #000;
+}
+.footer{
+  height: 100rpx;
+  width: 750rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  line-height: 100rpx;
+}
+.footer text{
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+}
+.footer .right{
+  background: #B89477;
+  color: #fff;
+}

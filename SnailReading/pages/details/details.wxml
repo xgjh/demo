@@ -1,0 +1,22 @@
+<!--pages/details/details.wxml-->
+<view class='container'>
+  <view class='cont'>
+    <image src=' {{detailData.imgAddr}}'></image>
+    <view class='bookname'> {{detailData.articleName}}</view>
+    <text class='author'> {{detailData.author}}</text>
+  </view>
+  <view class='nav'>
+    <text class="details {{isShowDetails?'active':''}}" bindtap='showDetails' >详情</text>
+    <text class="direc {{isShowDirec?'active':''}}" bindtap='showDirec' >目录</text>
+  </view>
+  <view class='d-cont' wx:if="{{isShowDetails}}"> {{detailData.info}}</view>
+  <view class='d-cont' wx:for="{{dataArr}}" wx:key="{{index}}" wx:if="{{isShowDirec}}">
+   <text>{{item}}</text>
+  </view>
+
+  <view class='footer'>
+    <text class="left {{addDesk?'grey':''}}" bindtap='handleAdd'>{{addDesk?'移出书桌':'加入书桌'}}</text>
+    <text class='right'>阅读</text>
+  </view>
+ 
+</view>

@@ -1,0 +1,13 @@
+/* pages/my/my.wxss */
+page{
+  padding: 200rpx 30rpx;
+  box-sizing: border-box;
+}
+.section{
+  margin-bottom: 20rpx;
+}
+.section input{
+  height: 60rpx;
+  border-bottom: 1px solid #dedede;
+  margin-bottom: 10rpx;
+}

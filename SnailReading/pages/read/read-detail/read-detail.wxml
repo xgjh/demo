@@ -1,0 +1,21 @@
+<!--pages/read/read-detail/read-detail.wxml-->
+
+<view class='cont'>
+<view class='info'>
+  <text class='tit'>{{articalArr.tit}}</text>
+   <view class='people'>
+        <image src="{{articalArr.aPhoto}}"></image>
+        <text>{{articalArr.author}}</text>
+        <text class='focus'>关注</text>
+    </view>
+  <view class='words'>{{articalArr.words}}</view>
+  <image class='bigPic' src="{{articalArr.bigImg}}"  mode='aspectFill'></image>
+</view>
+<view class='footer'>
+  <text class='iconfont icon-fenxiang'></text>
+  <text class='iconfont icon-shoucang'></text>
+  <text class='iconfont icon-liuyan'></text>
+</view>
+
+
+</view>

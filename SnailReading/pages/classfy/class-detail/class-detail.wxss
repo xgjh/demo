@@ -1,0 +1,28 @@
+/* pages/classfy/class-detail/class-detail.wxss */
+page{
+  padding: 15rpx 55rpx;
+  box-sizing: border-box;
+}
+.cont{
+  display: flex;
+  flex-wrap: wrap;
+}
+.info{
+  width: 174rpx;
+  height: 360rpx;
+  margin-right: 60rpx;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+.info:nth-child(3n){
+  margin-right: 0
+}
+.info image{
+  width: 174rpx;
+  height: 248rpx;
+  box-shadow: 0 0 10rpx 1px #dedede;
+}
+.info text{
+  font-size: 26rpx;
+  line-height: 40rpx;
+}

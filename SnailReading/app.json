@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/read/read",
+    "pages/self/self",
+    "pages/desk/desk",
+    "pages/classfy/classfy",
+    "pages/details/details",
+    "pages/classfy/class-detail/class-detail",
+    "pages/my/my",
+    "pages/read/read-detail/read-detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "蜗牛阅读",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#444",
+    "list": [
+      {
+        "pagePath": "pages/read/read",
+        "iconPath": "image/tab_icon1.png",
+        "selectedIconPath": "image/tab_icon1_active.png",
+        "text": "领读"
+      },
+      {
+        "pagePath": "pages/classfy/classfy",
+        "iconPath": "image/tab_icon2.png",
+        "selectedIconPath": "image/tab_icon2_active.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/desk/desk",
+        "iconPath": "image/tab_icon3.png",
+        "selectedIconPath": "image/tab_icon3_active.png",
+        "text": "书桌"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "image/tab_icon4.png",
+        "selectedIconPath": "image/tab_icon4_active.png",
+        "text": "我"
+      }
+    ]
+  }
+}

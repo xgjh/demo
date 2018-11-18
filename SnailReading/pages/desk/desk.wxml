@@ -1,0 +1,54 @@
+<!-- pages/desk/desk.wxml-->
+<text class='iconfont icon-kuailiebiao' bindtap='handleToDesk'></text>
+<swiper circular="{{true}}" bindchange='handleindex'>
+  <block wx:for="{{AddArr}}" wx:key="{{index}}" wx:if="{{index<4}}">
+    <swiper-item>
+      <image src="{{item.imgAddr}}" class="slide-image" mode='aspectFill'/>
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class='pot' >
+  <view wx:for="{{AddArr}}" wx:key="{{index}}" class="{{potIndex==index?'active':''}}" wx:if="{{index<4}}"></view>
+</view>
+
+<view class='footer'>
+  <text class='bookname'>{{AddArr[potIndex].articleName}}</text>
+  <text class='author'>{{AddArr[potIndex].author}}</text>
+</view>
+
+<!-- <view class="cover {{isShow?'active':''}}">
+  <view class='header'>
+    <text class='close' bindtap='handleClose'>关闭</text>
+    <text>我的书桌</text>
+    <text class='settle' bindtap='handleTidy'>整理</text>
+  </view>
+  <view class='main'>
+  <view class='info' wx:for="{{AddArr}}" wx:key="{{index}}">
+    <image src='{{item.imgAddr}}'></image>
+    <text>{{item.articleName}}</text>
+  </view>
+
+  </view>
+</view> -->
+
+<view class="cover {{isShow?'active':''}}">
+   <view class='header'>
+    <text class='close' bindtap='handleClose'>关闭</text>
+    <text>{{isTidy?'整理书桌':'我的书桌'}}</text>
+    <text class="settle" bindtap='handleTidy' > {{isTidy?'取消':'整理'}}</text>
+  </view>
+  <view class='main'>
+  <view class='info' wx:for="{{AddArr}}" wx:key="{{index}}">
+    <text class="iconfont icon-xuanze {{isTidy?'active':''}} {{item.isSelect?'bg-green':''}}" bindtap='handleSelect' data-num="{{index}}"></text>
+    <image src='{{item.imgAddr}}'></image>
+    <text>{{item.articleName}}</text>
+  </view>
+
+  </view>
+
+ <view class="footer {{isTidy?'active':''}}">
+  <text>置顶</text>
+  <text bindtap='handleDel'>移除</text>
+</view>
+</view>

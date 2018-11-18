@@ -1,0 +1,48 @@
+<!--pages/classfy/classfy.wxml-->
+
+  <view class='cont top'>
+    <view class='img'>
+      <image src='/image/img/book5.jpg'></image>
+      <view class='txt'>
+        <text>在读榜</text>
+        <text>Top List</text>
+      </view>
+    </view>
+    <view class='img'>
+      <image src='/image/img/book7.jpg'></image>
+      <view class='txt'>
+      <text>新书榜</text>
+      <text>New Release</text>
+      </view>
+    </view>
+   
+  </view>
+  <view class='line'>
+    <view></view>
+    <text>分类</text>
+  </view>
+
+  <view class='cont active'>
+    <view class='img' wx:for="{{cData}}" wx:key="{{index}}" bindtap='handleT' data-id="{{item.books}}">
+      <image src='{{item.bigImg}}'></image>
+      <view class='txt'>
+        <text>{{item.tit}}</text>
+      </view>
+    </view>
+    <!-- <view class='img'>
+      <image src='/image/img/book7.jpg'></image>
+      <view class='txt'>
+      <text>理想国</text>
+      </view>
+    </view>
+    <view class='img'>
+      <image src='/image/img/book5.jpg'></image>
+      <view class='txt'>
+        <text>中信出版</text>
+      </view>
+    </view> -->
+   
+  </view>
+
+
+  

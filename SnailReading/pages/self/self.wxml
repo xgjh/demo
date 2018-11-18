@@ -1,0 +1,24 @@
+<!--pages/self/self.wxml-->
+<view class='header'>
+  <image src='/image/img/book5.jpg'></image>
+  <text>用户名称</text>
+</view>
+
+<view class='cont'>
+  <view class='section'>
+    <text class='iconfont icon-zhanghu'></text>
+    <input type='digit' class='phone' placeholder='请输入手机号' bindinput="bindKeyInput" value="{{isValue?inputValue:''}}" bindblur='handleBlur'/>
+    <text class='iconfont icon-tubiao- del' bindtap='handleDel'></text>
+  </view>
+  <view class="section">
+  <text class='iconfont icon-mima'></text>
+  <input password="{{isEye?false:true}}" type="text" placeholder='请输入密码' />
+  <text class="iconfont {{isEye?'icon-icon-eye-open':'icon-close-eye'}}" bindtap='handleChange'></text>
+ </view>
+  <button class="btn">登录</button>
+</view>
+
+  <view class='regist'>
+    <text>快速注册</text>
+    <text>忘记密码？</text>
+  </view>

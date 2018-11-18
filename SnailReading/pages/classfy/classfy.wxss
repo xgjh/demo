@@ -1,0 +1,91 @@
+/* pages/classfy/classfy.wxss */
+@import "../../utils/icon.wxss";
+page{
+  padding-top: 15rpx;
+  background: #fff;
+}
+
+.cont{
+  padding: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+ 
+}
+.cont .img{
+  width: 330rpx;
+  height: 200rpx;
+  position: relative;
+}
+.cont .img>image{
+  width: 100%;
+  height: 100%;
+  border-radius: 6rpx;
+}
+.top .txt{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  
+}
+.top .txt text:nth-child(1){
+  font-weight: bold;
+  font-size: 40rpx;
+  letter-spacing: 24rpx;
+  margin-left: 24rpx;
+}
+.top .txt text:nth-child(2){
+  font-size: 16rpx;
+  margin-top: 20rpx;
+  letter-spacing: 5rpx;
+  margin-left: 5rpx;
+}
+.line{
+ padding:20rpx 30rpx;
+ position: relative;
+ text-align: center;
+}
+.line>view{
+  height: 1px;
+  background: #f1f1f1;
+  
+}
+.line>text{
+  display: inline-block;
+  font-size: 24rpx;
+  color: #bfbfbf;
+  position: absolute;
+  top: 0;
+  width: 80rpx;
+  background: #fff;
+  letter-spacing: 6rpx;
+  margin-left:-34rpx;
+}
+.active .img{
+  width: 215rpx;
+  height: 215rpx;
+  position: relative;
+  margin-bottom: 30rpx;
+}
+.active .txt{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  color: #fff;
+  margin-left: 24rpx;
+  margin-top: 24rpx;
+}
+.active .txt>text{
+  letter-spacing: 5rpx;
+  margin-left: 5rpx;
+}
+

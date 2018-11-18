@@ -1,0 +1,70 @@
+/* pages/self/self.wxss */
+page{
+  padding-top: 120rpx;
+}
+.header{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header image{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+
+}
+.header text{
+  font-size: 34rpx;
+  color: #004381;
+  margin-top: 20rpx;
+}
+
+.cont{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 50rpx;
+}
+.cont .section,
+.btn{
+  width: 520rpx;
+  height: 80rpx;
+  border-radius: 100rpx;
+  margin-top: 40rpx;
+  border: 1px solid rgba(0,0,0,0.2);
+}
+.btn{
+  margin-top: 80rpx;
+  line-height: 80rpx;
+  background: #004381;
+  letter-spacing: 24rpx;
+  color: white;
+}
+.regist{
+  width: 520rpx;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40rpx;
+}
+.regist text{
+  font-size: 28rpx;
+  color: #004381;
+}
+.regist text:nth-child(2){
+  color: #9d9d9d;
+}
+.iconfont{
+  color: #004381;
+}
+.cont .section{
+  padding: 0 30rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+}

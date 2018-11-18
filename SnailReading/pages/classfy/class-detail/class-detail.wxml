@@ -1,0 +1,13 @@
+<!--pages/classfy/class-detail/class-detail.wxml-->
+<view class='cont'>
+  <!-- <view class='info'>
+    <image src='/image/img/books1.png'></image>
+    <text>谷歌和亚马逊如何做产品</text>
+  </view> -->
+  <view class='info' wx:for="{{classifyDetail}}" wx:key="{{index}}" bindtap='handleTo' data-id="{{item.classId}}">
+    <image src='{{item.imgAddr}}'></image>
+    <text>{{item.articleName}}</text>
+  </view>
+</view>
+
+

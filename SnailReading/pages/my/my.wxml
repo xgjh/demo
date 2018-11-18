@@ -1,0 +1,32 @@
+<!--pages/my/my.wxml-->
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="section">
+    <view class="section__title">分类</view>
+    <input name="classify"/>
+  </view>
+  <view class="section">
+    <view class="section__title">图片</view>
+    <input name="imgAddr"/>
+  </view>
+  <view class="section">
+    <view class="section__title">作品名称</view>
+    <input name="articleName"/>
+  </view>
+   <view class="section">
+    <view class="section__title">作者</view>
+    <input name="author"/>
+  </view>
+  <view class="section">
+    <view class="section__title">简介</view>
+    <textarea name="info" value='本尼特先生有五个宝贝女儿，本尼特太太为她们的婚事操碎了心。新来邻居宾格利多金且帅，在一次舞会上，对本尼特家美貌的大女儿简一见钟情。参加舞会的还有宾格利的好友达希，他俊朗潇洒，贵气逼人，但恃才傲物，认为她们都不配成为自己的舞伴，其中包括简的妹妹伊丽莎白。自尊心很强的伊丽莎白无意间听'>
+</textarea>
+  </view>
+  <view class="section">
+    <view class="section__title">目录</view>
+    <textarea name="direc" value='PART 1 创业1998-2004$第1章 少年：喜欢天文的Pony站长$第2章 开局：并不清晰的出发$第3章 生死：泡沫破灭中的挣扎$第4章 梦网：意外的拯救者$第5章 QQ秀：真实世界的倒影$第6章 上市：夹击中的“成人礼”$第7章 调整：一站式在线生活$第8章 战MSN：'>
+    </textarea>
+  </view>
+  <view class="btn-area">
+    <button formType="submit">提交</button>
+  </view>
+</form>

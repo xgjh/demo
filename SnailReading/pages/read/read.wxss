@@ -1,0 +1,82 @@
+
+
+.info{
+  height: 790rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+  margin-top: 15rpx;
+  padding: 0 30rpx;
+}
+
+.people{
+  margin-top: 20rpx;
+  height: 70rpx;
+  display: flex;
+  align-items: center;
+  
+}
+.people image{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  margin-right: 30rpx;
+}
+.info .bigPic{
+  width: 700rpx;
+  margin-top: 30rpx;
+  height: 300rpx;
+  border-radius: 5rpx;
+}
+.desc .tit{
+  /* width: 690rpx; */
+  font-size: 45rpx;
+  font-weight: 700;
+  margin-top: 30rpx;
+  line-height: 55rpx;
+  margin-bottom: 35rpx;
+  /* border: 1rpx solid ; */
+}
+.desc .tit .fire{
+  font-size: 24rpx;
+  color: #fff;
+  background: #bc7878;
+  padding:0rpx 10rpx;
+  border-radius: 22rpx;
+  margin-right: 10rpx;
+  display: inline-block;
+  vertical-align: bottom;
+  
+}
+.desc .center{
+  /* width: 700rpx; */
+  font-size: 30rpx;
+  height: 80rpx;
+  color: #7f7f7f;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 45rpx;
+  margin-bottom: 35rpx;
+  /* letter-spacing: 1rpx; */
+}
+.footer{
+  width: 680rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.footer text{
+  height: 28rpx;
+  color: #c0c0c0;
+}
+.footer view{
+  width: 130rpx;
+  height: 50rpx;
+  display: inline-block;
+  color:#b3b3b3;
+
+}
+.footer image{
+  width: 50rpx;
+  height: 50rpx;
+  background: red;
+  float: right;
+}
