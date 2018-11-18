@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.10&key=aa2d8ee47120a8916bcb07593f52f229"></script>
+		<script type="text/javascript" src="js/iconfont.js"></script>
+		<style type="text/css">
+			.icon {
+				width: 1em;
+				height: 1em;
+				vertical-align: -0.15em;
+				fill: currentColor;
+				overflow: hidden;
+				font-size: 40px;
+			}
+			
+			.mui-bar-nav .iconfont {
+				color: #333;
+				font-size: 22px;
+			}
+			
+			#map {
+				height: 100%;
+				/*border: 1px solid red;*/
+			}
+			
+			.mui-content .mui-scroll {
+				height: 100%;
+			}
+			
+			.my-content {
+				position: fixed;
+				bottom: 20px;
+				left: 2%;
+				width: 96%;
+			}
+			
+			.my-shadow {
+				overflow: hidden;
+				border-radius: 4px;
+				box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+			}
+			
+			.my-content .mui-table-view-cell {
+				padding: 15px;
+			}
+			
+			.my-content .mui-table-view-cell.mui-active {
+				background: #fff;
+			}
+			
+			.my-content .mui-input-group:before {
+				height: 0;
+			}
+			
+			.my-content .mui-input-row {
+				height: 54px;
+				padding-top: 7px;
+				position: relative;
+				padding-left: 30px;
+			}
+			
+			.my-content .mui-input-row:before {
+				content: '';
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				position: absolute;
+				top: 50%;
+				left: 20px;
+				margin-top: -5px;
+			}
+			
+			.my-content .bg-green:after {
+				left: 50px;
+			}
+			
+			.my-content .mui-input-row.bg-green:before {
+				background: #2eab8c;
+			}
+			
+			.my-content .mui-input-row.bg-orange:before {
+				background: #fc9153;
+			}
+			
+			.tab {
+				display: inline-block;
+				padding: 4px 15px;
+				border-radius: 20px;
+				margin: 0 5px;
+				color: #999;
+				font-size: 12px;
+			}
+			
+			.tab.active {
+				border: 1px solid #dbdbdf;
+				color: #444;
+			}
+			/*日期控件的样式调整*/
+			
+			.mui-dtpicker-header,
+			.mui-picker {
+				background: #FFF;
+			}
+			
+			.mui-dtpicker-title {
+				height: 0;
+			}
+			
+			.mui-dtpicker-header .mui-btn {
+				border: none;
+				background: none;
+			}
+			
+			.mui-dtpicker-header .mui-btn-blue {
+				color: orange;
+			}
+			/*顶部区域样式*/
+			
+			.mui-bar-nav {
+				background: #FFF;
+			}
+			
+			#sliderSegmentedControl {
+				background: #FFF;
+			}
+			
+			.show-grid {
+				position: absolute;
+				top: 0;
+				right: 0;
+				height: 100%;
+				width: 40px;
+				/*border: 1px solid red;*/
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background: #FFF;
+				z-index: 2;
+				box-shadow: 0 0 20px 4px #FFF;
+			}
+			
+			.grid-cont {
+				position: fixed;
+				top: 44px;
+				left: 0;
+				width: 100%;
+				z-index: 3;
+				display: none;
+			}
+			
+			.grid-cont .mui-table-view.mui-grid-9 {
+				background: #FFF;
+			}
+			
+			#demo7 {
+				cursor: pointer;
+			}
+			.c-black{
+				color: black;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- 主界面不动、菜单移动 -->
+		<!-- 侧滑导航根容器 -->
+		<div class="mui-off-canvas-wrap mui-draggable mui-slide-in">
+			<!-- 菜单容器 -->
+			<aside class="mui-off-canvas-left" id="offCanvasSide">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<!-- 菜单具体展示内容 -->
+
+					</div>
+				</div>
+			</aside>
+			<!-- 主页面容器 -->
+			<div class="mui-inner-wrap">
+				<!-- 主页面标题 -->
+				<header class="mui-bar mui-bar-nav">
+					<a class="mui-icon mui-action-menu mui-pull-left" href="#offCanvasSide">
+						<i class="iconfont icon-geren"></i>
+					</a>
+					<h1 class="mui-title">滴滴打车</h1>
+					<a class="mui-icon mui-action-menu mui-pull-right">
+						<i class="iconfont icon-xiaoxi"></i>
+					</a>
+				</header>
+				<div class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<!-- 主界面具体展示内容 -->
+						<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+							<div class="mui-scroll">
+								<a class="mui-control-item mui-active" href="#item1mobile">
+									推荐
+								</a>
+								<a class="mui-control-item" href="#item2mobile">
+									热点
+								</a>
+								<a class="mui-control-item" href="#item3mobile">
+									北京
+								</a>
+								<a class="mui-control-item" href="#item4mobile">
+									社会
+								</a>
+								<a class="mui-control-item" href="#item5mobile">
+									娱乐
+								</a>
+								<a class="mui-control-item" href="#item6mobile">
+									科技
+								</a>
+							</div>
+							<div class="show-grid">
+								<i class="iconfont icon-shenglve fs-18"></i>
+							</div>
+						</div>
+						<div class="grid-cont">
+							<ul class="mui-table-view no-b-b">
+								<li class="mui-table-view-cell mui-text-center">
+									全部服务
+									<i class="iconfont icon-guanbi mui-pull-right"></i>
+								</li>
+							</ul>
+							<ul class="mui-table-view mui-grid-view mui-grid-9">
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+									<a href="#">
+										<span class="mui-icon">
+											<svg class="icon" aria-hidden="true">
+						                        <use xlink:href="#icon-zihangche"></use>
+						                    </svg>
+										</span>
+										<div class="mui-media-body">自行车</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+									<a href="#">
+										<span class="mui-icon">
+											<svg class="icon" aria-hidden="true">
+						                        <use xlink:href="#icon-zhishengji"></use>
+						                    </svg>
+										</span>
+										<div class="mui-media-body">直升机</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+									<a href="#">
+										<span class="mui-icon">
+											<svg class="icon" aria-hidden="true">
+						                        <use xlink:href="#icon-tuolaji"></use>
+						                    </svg>
+										</span>
+										<div class="mui-media-body">拖拉机</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+									<a href="#">
+										<span class="mui-icon">
+											<svg class="icon" aria-hidden="true">
+						                        <use xlink:href="#icon-xiaoche"></use>
+						                    </svg>
+										</span>
+										<div class="mui-media-body">校车</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+									<a href="#">
+										<span class="mui-icon">
+											<svg class="icon" aria-hidden="true">
+						                        <use xlink:href="#icon-jiuhuche"></use>
+						                    </svg>
+										</span>
+										<div class="mui-media-body">救护车</div>
+									</a>
+								</li>
+								<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+									<a href="#">
+										<span class="mui-icon">
+											<svg class="icon" aria-hidden="true">
+						                        <use xlink:href="#icon-dianche"></use>
+						                    </svg>
+										</span>
+										<div class="mui-media-body">Phone</div>
+									</a>
+								</li>
+							</ul>
+
+						</div>
+
+						<div id="map"></div>
+						<div class="my-content">
+							<ul class="mui-table-view my-shadow">
+								<li class="mui-table-view-cell">
+									请勿让未成年人独自乘车，需要监护人陪同
+								</li>
+							</ul>
+							<div class="time-address has-m-t my-shadow">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell mui-text-center no-b-b">
+										<div class="tab active">现在</div>
+										<div class="tab">预约</div>
+									</li>
+									<li id='demo7' data-options='' class="btn mui-table-view-cell mui-text-center" style="display: none;">
+										预约时间
+										<span class="mui-icon mui-icon-arrowright fs-16"></span>
+									</li>
+								</ul>
+								<div class="mui-input-group">
+									<div class="mui-input-row bg-green">
+										<input type="text" class="mui-input-clear" placeholder="请输入乘车地">
+									</div>
+									<div class="mui-input-row bg-orange">
+										<input type="text" class="mui-input-clear" placeholder="请输入目的地">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="mui-off-canvas-backdrop"></div>
+			</div>
+		</div>
+		<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mui.picker.min.js"></script>
+		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+		<script>
+			//			下拉九宫格控制
+			$('.show-grid').on('tap', function() {
+				$('.grid-cont').slideDown();
+			})
+
+			$('.icon-guanbi').on('tap', function() {
+					$('.grid-cont').slideUp();
+				})
+			$(".tab").click(function(){
+				$(".tab").removeClass("active");
+				$(this).addClass("active");
+				if($(".tab").eq(0).hasClass("active")){
+					$("#demo7").hide();
+				}else{
+					$("#demo7").show();
+				}
+			})
+			
+				//			日期控件
+			function createData() {
+				var dtoptions = {
+					"type": "date", //可以控制日期选择控件的列数
+					"customData": { //里面的配置项可控制每一列中的数据
+						"y": [],
+						"m": [],
+						"d": [],
+					},
+					"labels": ["", "", ""] //日期控件顶部标题栏
+				}
+				var myDate = new Date();
+				var month = myDate.getMonth() + 1;
+				var date = myDate.getDate();
+				var day = myDate.getDay();
+				//			console.log(day);
+				for(var i = 0; i < 3; i++) { //生成年份列表的数据
+					var strY = month + '月' + (date + i) + '日' + ' ' + handleDay(day + i);
+					var objY = {}; //每次向y数组push一个新的对象
+					objY.text = strY;
+					objY.value = strY;
+					dtoptions.customData.y.push(objY);
+				}
+
+				for(var i = 10; i < 18; i++) { //生成时钟的数据
+					var strM = i + '点';
+					var objM = {
+						'text': strM,
+						'value': strM
+					};
+					dtoptions.customData.m.push(objM);
+				}
+
+				for(var i = 0; i < 60; i += 10) { //生成分钟的数据
+					var strD = i + '分';
+					var objD = {
+						'text': strD,
+						'value': strD
+					};
+					dtoptions.customData.d.push(objD);
+				}
+
+				var demo = document.getElementById('demo7');
+				demo.setAttribute('data-options', JSON.stringify(dtoptions));
+			}
+
+			createData();
+			//			处理星期的函数
+			function handleDay(d) {
+				var arr = ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期天'];
+				return arr[d - 1];
+			}
+
+			//将使用日期对象动态生成的数据，设置给按钮作为其新的配置项
+
+			(function($) {
+				$.init();
+				var result = $('#demo7')[0];
+				//				var btns = $('.btn');
+				//				btns.each(function(i, btn) {
+				result.addEventListener('tap', function() {
+					var _self = this;
+					if(_self.picker) {
+						_self.picker.show(function(rs) {
+							result.innerText = rs.text;
+							_self.picker.dispose();
+							_self.picker = null;
+						});
+					} else {
+						var optionsJson = this.getAttribute('data-options') || '{}';
+						var options = JSON.parse(optionsJson);
+						var id = this.getAttribute('id');
+						/*
+						 * 首次显示时实例化组件
+						 * 示例为了简洁，将 options 放在了按钮的 dom 上
+						 * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
+						 */
+						_self.picker = new $.DtPicker(options);
+						_self.picker.show(function(rs) {
+							result.innerText = rs.text;
+							_self.picker.dispose();
+							_self.picker = null;
+						});
+					}
+
+				}, false);
+				//				});
+			})(mui);
+
+			//		地图配置项
+			var map = new AMap.Map('map', {
+				zoom: 15,
+			});
+
+			//			mui.init()
+		</script>
+	</body>
+
+</html>
